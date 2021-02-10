@@ -14,7 +14,7 @@ Module: ClusterGenerator
 import numpy as np
 
 from pprint import pprint
-from scipy.integrate import quad, dblquad
+from scipy.integrate import dblquad
 
 """Useful Snippets"""
 

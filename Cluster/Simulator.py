@@ -2,7 +2,6 @@ import numpy as np
 from .Generator  import Signal, GaussianSignal, Digitizer # Simulator
 from .Clustering import EventClustering, Pixel           # Clustering Algorithm
 from .MonteCarloGenerator import GaussianSignalISOMonteCarlo
-import logging
 
 from .Grapher import PrintTFGrid
 
