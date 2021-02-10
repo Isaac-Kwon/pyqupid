@@ -46,6 +46,10 @@ class ClusterSimulation():
             for pixel in cluster:
                 grid[pixel.y,pixel.x] = True
             self.gridlist.append(grid)
+    def Clear(self):
+        self.detector.ClearSignal()
+        self.gridlist.clear()
+        return None
 
 class SingleGISOParticleSimulation(ClusterSimulation):
     def __init__(self, detector=None, sigrange=(0, ne_alpha), sigdev=0.83):
@@ -65,14 +69,13 @@ class SingleGISOParticleSimulation(ClusterSimulation):
             pixlist.append(Pixel(x=fX[i], y=fY[i]))
         self.Analysis(pixlist)
         self.i=self.i+1
+        return None
     def Record(self):
-        with open(self.filename, 'a') as file:
-            for grid in self.gridlist:
-                result = '%d\t%.2f\t%.2f\t%d\t%d'%(self.i, self.detector.signals[0].x0, self.detector.signals[0].y0, self.detector.signals[0].amplitude, np.sum(np.sum(grid)))
-                file.write(result+"\n")
-                print(result)
-                PrintTFGrid(grid)
-    def Clear(self):
-        self.detector.ClearSignal()
-        self.gridlist.clear()
+        # with open(self.filename, 'a') as file:
+        #     for grid in self.gridlist:
+        #         result = '%d\t%.2f\t%.2f\t%d\t%d'%(self.i, self.detector.signals[0].x0, self.detector.signals[0].y0, self.detector.signals[0].amplitude, np.sum(np.sum(grid)))
+        #         file.write(result+"\n")
+        #         print(result)
+        #         PrintTFGrid(grid)
+        return None
         return None
