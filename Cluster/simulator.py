@@ -78,4 +78,29 @@ class SingleGISOParticleSimulation(ClusterSimulation):
         #         print(result)
         #         PrintTFGrid(grid)
         return None
+
+class DoubleGISOParticleSimulation(ClusterSimulation):
+    def __init__(self, detector=None, sigrange=(0, ne_alpha), sigdev=0.83):
+        super(DoubleGISOParticleSimulation, self).__init__(detector=detector)
+        self.mc1 = GaussianSignalISOMonteCarlo((-0.5, 0.5),
+                                              (-0.5, 0.5),
+                                              sigrange=sigrange, sigdev=sigdev)
+        self.mc2 = GaussianSignalISOMonteCarlo((-0.5, 0.5),
+                                              (-0.5, 0.5),
+                                              sigrange=sigrange, sigdev=sigdev)
+        self.filename = 'text.txt'
+        self.i=0
+        with open(self.filename, 'w') as file:
+            pass
+    def Execute(self):
+        self.detector.InjectSignal(self.mc1.GenerateSignal())
+        self.detector.InjectSignal(self.mc2.GenerateSignal())
+        fX, fY = self.detector.GetDigitizedSignal_List()
+        pixlist = list()
+        for i in range(fX.size):
+            pixlist.append(Pixel(x=fX[i], y=fY[i]))
+        self.Analysis(pixlist)
+        self.i=self.i+1
+        return None
+    def Record(self):
         return None
