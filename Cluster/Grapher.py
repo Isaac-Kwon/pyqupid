@@ -6,6 +6,16 @@ from matplotlib.ticker import LinearLocator, FormatStrFormatter
 """
 Module: Grapher
 """
+def PrintTFGrid(G):
+    assert isinstance(G, np.ndarray)
+    assert G.ndim == 2
+    for i in range(G.shape[1]):
+        for j in range(G.shape[0]):
+            if G[i,j]:
+                print("T", end="")
+            else:
+                print("F", end="")
+        print()
 
 def PlotSignalAnalogue(X,Y,Z, ax=None):
     if ax == None:
@@ -19,7 +29,7 @@ def PlotPixels(Z, ax=None, wholeplot=False, shownumber=False, numberregion=(1, 9
     x = np.arange(0, Z.shape[1], 1)
     y = np.arange(0, Z.shape[0], 1)
     X, Y = np.meshgrid(x,y)
-
+    
     if not Z.dtype == bool:
         Z_ = Z> Z.max()*0.01
         cmap='gist_heat_r'
