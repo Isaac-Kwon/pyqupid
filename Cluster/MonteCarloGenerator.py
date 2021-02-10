@@ -1,5 +1,5 @@
 from random import random
-from Generator import GaussianSignal
+from .Generator import GaussianSignal
 
 def RandomUniform(range_min, range_max):
     interval = range_max-range_min
@@ -39,7 +39,7 @@ class MonteCarlo:
 
 
 class GaussianSignalISOMonteCarlo(MonteCarlo):
-    def __init__(self, xrange, yrange, sigrange, sigdev=0.68):
+    def __init__(self, xrange, yrange, sigrange, sigdev=0.83):
         geninfo = { # Setup monte-carlo generator base
             "x0":{
                 "range": (xrange[0], xrange[1])
