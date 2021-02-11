@@ -79,9 +79,9 @@ class Cluster(list):
         Class Cluster, list class inherited.
         It should be list of pixels.
     """
-    def countInclusion(self, other):
+    def CountInclusion(self, other):
         """
-            Cluster.countInclusion(self:Cluster, other:Cluster) -> int
+            Cluster.CountInclusion(self:Cluster, other:Cluster) -> int
             > return how many pixel is overlapped with Cluster(other)
         """
         if not isinstance(other, Cluster):
@@ -104,7 +104,7 @@ class Cluster(list):
                 In Case of Cluster, count pixels overlapped with clusters.
                 if number pixel overlapped is same with number of element in cluster, return true
             """
-            nInside = self.countInclusion(other)
+            nInside = self.CountInclusion(other)
             if nInside == len(other):
                 return True
             else:
@@ -132,7 +132,7 @@ class Cluster(list):
         """
         if not isinstance(other, Cluster):
             raise TypeError("Cluster.IsPile method is not valid for %s"%(type(other)))
-        return self.countInclusion(other)>0
+        return self.CountInclusion(other)>0
     def IsNear(self, other, diagonal=False):
         """
             Cluster.IsNear(self:Cluster, other:[Cluster or Pixel], nrange:int=1, diagonal:bool) -> bool 
