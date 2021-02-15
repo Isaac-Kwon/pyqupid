@@ -1,0 +1,13 @@
+name: "TestCheck"
+on: 
+  push:
+    branches: [ worlflow_test ]
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ammaraskar/sphinx-action@master
+      with:
+        docs-folder: "docs/"
