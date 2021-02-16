@@ -1,7 +1,7 @@
-Cluster.PostProcessing module
+qupid.PostProcessing module
 =============================
 
-.. automodule:: Cluster.PostProcessing
+.. automodule:: qupid.PostProcessing
    :members:
    :undoc-members:
    :show-inheritance:

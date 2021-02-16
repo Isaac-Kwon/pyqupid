@@ -1,7 +1,7 @@
-Cluster.Grapher module
+qupid.Grapher module
 ======================
 
-.. automodule:: Cluster.Grapher
+.. automodule:: qupid.Grapher
    :members:
    :undoc-members:
    :show-inheritance:

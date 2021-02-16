@@ -1,7 +1,7 @@
-Cluster.MonteCarloGenerator module
+qupid.MonteCarloGenerator module
 ==================================
 
-.. automodule:: Cluster.MonteCarloGenerator
+.. automodule:: qupid.MonteCarloGenerator
    :members:
    :undoc-members:
    :show-inheritance:

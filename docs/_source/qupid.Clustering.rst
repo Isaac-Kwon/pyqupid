@@ -1,7 +1,7 @@
-Cluster.Clustering module
+qupid.Clustering module
 =========================
 
-.. automodule:: Cluster.Clustering
+.. automodule:: qupid.Clustering
    :members:
    :undoc-members:
    :show-inheritance:

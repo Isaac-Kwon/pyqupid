@@ -1,7 +1,7 @@
-Cluster.Generator module
+Cluster.Simulator module
 ========================
 
-.. automodule:: Cluster.Generator
+.. automodule:: qupid.Simulator
    :members:
    :undoc-members:
    :show-inheritance:
