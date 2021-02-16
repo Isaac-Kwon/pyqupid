@@ -155,14 +155,12 @@ class Digitizer:
             AnalogSignal = 0
         for signal in self.signals:
             AnalogSignal += signal.GetSignal(X,Y)
-        # print("Total number of signal : %d"%(len(self.signals)) )
         return AnalogSignal
     def GetDigitalSignal_Old(self):
         centerSignal_ = self.GetAnalogSignal(self.centerX, self.centerY)
         centerSignal  = centerSignal_ * (PinMatrix(self.X) - PinMatrix(self.X, False, True))[1:-1,1:-1] * (PinMatrix(self.Y) - PinMatrix(self.Y, True, False))[1:-1,1:-1]
         return centerSignal
     def GetDigitalSignal_List(self):
-        # OnPixels      = self.GetAnalogSignal(self.centerX, self.centerY)>0.1
         OnPixels      = self.GetDigitalSignal_Old()>0.1
         x    = self.centerX[OnPixels]
         y    = self.centerY[OnPixels]
@@ -181,10 +179,9 @@ class Digitizer:
         ansY = list()
         ansZ = list()
         for i in range(xmin.size):
-            ansZ.append(dblquad(lambda x,y : self.GetAnalogSignal(x,y), ymin[i], ymax[i], xmin[i], xmax[i])[0]) # dblquad 를 할 때, 람다 수식 순서와 적분구간의 표기가 반대...? 라는 이야기가 있어서 바꿨는데
+            ansZ.append(dblquad(lambda x,y : self.GetAnalogSignal(x,y), ymin[i], ymax[i], xmin[i], xmax[i])[0]) 
             ansX.append(X[i])
             ansY.append(Y[i])
-            # print("Integral from [x,y]=[%d,%d] -> %.1f"%(xmin[i], ymin[i], ansZ[i]))
         return np.array(ansX), np.array(ansY), np.array(ansZ)
     def GetDigitalSignal(self):
         iX,iY,iZ = self.GetDigitalSignal_List()
