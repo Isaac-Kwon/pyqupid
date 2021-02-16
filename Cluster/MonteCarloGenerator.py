@@ -34,7 +34,7 @@ class MonteCarlo:
                 self.gendict[key]["func"] = (lambda val : lambda : val)(self.gendict[key]["fix"])
     def Generate(self):
         for key in self.gendict.keys():
-            assert callable(self.gendict[key]["func"])
+            assert callable(self.gendict[key]["func"]), "MCGenerationFunction should be callable even the fixed value"
             self.gendict[key]["value"] = self.gendict[key]["func"]()
 
 
