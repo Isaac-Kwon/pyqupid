@@ -6,9 +6,10 @@ from matplotlib.ticker import LinearLocator, FormatStrFormatter
 """
 Module: Grapher
 """
-def PrintTFGrid(G):
-    assert isinstance(G, np.ndarray)
-    assert G.ndim == 2
+    assert isinstance(G, np.ndarray), "Input matrix should be numpy.ndarray"
+    assert G.ndim == 2, "Dimension of input matrix should be 2-dimensional matrix"
+    assert len(truetext)==1, "Text for True should be single charactor"
+    assert len(falsetext)==1, "Text for False should be single charactor"
     for i in range(G.shape[1]):
         for j in range(G.shape[0]):
             if G[i,j]:
