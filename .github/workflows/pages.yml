@@ -1,7 +1,7 @@
 name: "TestCheck"
 on: 
   push:
-    branches: [ worlflow_test ]
+    branches: [ workflow_test ]
 
 jobs:
   docs:
