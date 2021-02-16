@@ -16,7 +16,7 @@ jobs:
     - name: Commit documentation changes
       run: |
         git clone https://github.com/Isaac-Kwon/QUPID.git --branch gh-pages --single-branch gh-pages
-        cp -r docs/_build/html/ gh-pages/html
+        cp -r docs/_build/html/* gh-pages/docs
         cd gh-pages/html
         touch .nojekyll
         git config --local user.email "action@github.com"
