@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>qupid.Grapher module &#8212; QuPiD 0.0.1 문서</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="색인" href="genindex.html" />
+    <link rel="search" title="검색" href="search.html" />
+    <link rel="next" title="qupid.MonteCarloGenerator module" href="qupid.MonteCarloGenerator.html" />
+    <link rel="prev" title="qupid.Generator module" href="qupid.Generator.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="index.html">
+    
+      <p class="title">QuPiD</p>
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="qupid.html">qupid package</a>
+        </li>
+        
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+    <div class="bd-toc-item active">
+    
+  
+    <ul class="nav bd-sidenav">
+        
+        
+          
+        
+        
+      </ul>
+  
+  </nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="module-qupid.Grapher">
+<span id="qupid-grapher-module"></span><h1>qupid.Grapher module<a class="headerlink" href="#module-qupid.Grapher" title="제목 주소">¶</a></h1>
+<dl class="function">
+<dt id="qupid.Grapher.PlotPixels">
+<code class="sig-prename descclassname">qupid.Grapher.</code><code class="sig-name descname">PlotPixels</code><span class="sig-paren">(</span><em class="sig-param">Z</em>, <em class="sig-param">ax=None</em>, <em class="sig-param">wholeplot=False</em>, <em class="sig-param">shownumber=False</em>, <em class="sig-param">numberregion=(1</em>, <em class="sig-param">9999)</em>, <em class="sig-param">fontsize=12</em>, <em class="sig-param">highnumber=False</em>, <em class="sig-param">threshold=None</em><span class="sig-paren">)</span><a class="headerlink" href="#qupid.Grapher.PlotPixels" title="정의 주소">¶</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">`True`</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">`False`</span></code> 로 이루어진 행렬 값을 받아 <code class="docutils literal notranslate"><span class="pre">`matplotlib.pyplot.imshow`</span></code> 함수를 활용하여 True 원소를 표시하거나, 숫자로 이루어진 행렬값을 받아 각 원소별로 가지는 값의 높고 낮음을 <code class="docutils literal notranslate"><span class="pre">`matplotlib.pyplot.imshow`</span></code> 를 활용하여 그리는 함수</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>Z</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>그래프에 표기할 행렬</p>
+</dd>
+<dt><strong>ax</strong><span class="classifier">matplotlib.pyplot.axes</span></dt><dd><p>그래프를 그릴 축</p>
+</dd>
+<dt><strong>wholeplot</strong><span class="classifier">bool, default=False</span></dt><dd><ul class="simple">
+<li><p>True : 전체 행렬을 볼 수 있도록 함.</p></li>
+<li><p>False : 값이 0 초과 또는 True 인 행렬값을 주로 볼 수 있도록 축을 확대함.</p></li>
+</ul>
+</dd>
+<dt><strong>shownumber</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
+<li><p>True : 그래프 위에 숫자를 표기함.</p></li>
+<li><p>False : 그래프 위에 숫자를 표기하지 않음.</p></li>
+</ul>
+</dd>
+<dt><strong>numberregion</strong><span class="classifier">tuple of num or list of num, default:(1,9999)</span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">`shownumber`</span></code> 가 <code class="docutils literal notranslate"><span class="pre">`True`</span></code> 일 경우 표시될 숫자의 크기 범위를 지정</p>
+</dd>
+<dt><strong>fontsize</strong><span class="classifier">int</span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">`shownumber`</span></code> 가 <code class="docutils literal notranslate"><span class="pre">`True`</span></code> 일 경우 표시될 숫자의 글꼴 크기를 지정</p>
+</dd>
+<dt><strong>highnumber</strong><span class="classifier">bool</span></dt><dd><p>(depreciated)</p>
+</dd>
+<dt><strong>threshold</strong><span class="classifier">int or None</span></dt><dd><p>int  : <code class="docutils literal notranslate"><span class="pre">`threshold`</span></code> 보다 높은 크기의 원소를 그림.
+None : 그래프의 높낮이 (색깔) 이 그 위치에서의 값의 크기를 뜻함.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="qupid.Grapher.PlotSignalAnalogue">
+<code class="sig-prename descclassname">qupid.Grapher.</code><code class="sig-name descname">PlotSignalAnalogue</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">Y</em>, <em class="sig-param">Z</em>, <em class="sig-param">ax=None</em><span class="sig-paren">)</span><a class="headerlink" href="#qupid.Grapher.PlotSignalAnalogue" title="정의 주소">¶</a></dt>
+<dd><p>np.meshgrid 로 메시화된 행렬공간값으로 2D 공간그래프를 그리는 함수</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>np.meshgrid 로 형성된 X 값</p>
+</dd>
+<dt><strong>Y</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>np.meshgrid 로 형성된 Y 값</p>
+</dd>
+<dt><strong>Z</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>계산된 높이값 (Z)</p>
+</dd>
+<dt><strong>ax</strong><span class="classifier">matplotlib.pyplot.axes</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="qupid.Grapher.PrintTFGrid">
+<code class="sig-prename descclassname">qupid.Grapher.</code><code class="sig-name descname">PrintTFGrid</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">truetext='T'</em>, <em class="sig-param">falsetext='F'</em><span class="sig-paren">)</span><a class="headerlink" href="#qupid.Grapher.PrintTFGrid" title="정의 주소">¶</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">`True`</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">`False`</span></code> 로 이루어진 행렬 값을 받아 쉘에 정사각형으로 출력하는 함수</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>G</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>출력할 <code class="docutils literal notranslate"><span class="pre">`True`</span></code> 와 <code class="docutils literal notranslate"><span class="pre">`False`</span></code> 로 이루어진 <strong>2차원</strong> 행렬</p>
+</dd>
+<dt><strong>truetext</strong><span class="classifier">str</span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">`True`</span></code> 일 경우 출력할 문자 (1글자)</p>
+</dd>
+<dt><strong>falsetext</strong><span class="classifier">str</span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">`False`</span></code> 일 경우 출력할 문자 (1글자)</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="qupid.Generator.html" title="previous page">qupid.Generator module</a>
+    <a class='right-next' id="next-link" href="qupid.MonteCarloGenerator.html" title="next page">qupid.MonteCarloGenerator module</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2021, Minjae Kwon.<br/>
+        <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4 버전으로 생성되었습니다.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
