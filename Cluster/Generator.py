@@ -46,7 +46,7 @@ class Signal:
         if isinstance(X, np.ndarray) and isinstance(Y, np.ndarray):
             if X.size == Y.size:
                 print("The signal is not defined. (this is pure class) Returning zero signal for all")
-                return np.zeros(X.size)
+                return np.zeros(X.shape)
             return 0
     def GetSignal(self, x, y, amplitude=100):
         return np.zeros(x.shape)
