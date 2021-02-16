@@ -48,9 +48,7 @@ class Signal:
                 print("The signal is not defined. (this is pure class) Returning zero signal for all")
                 return np.zeros(X.shape)
             return 0
-    def GetSignal(self, x, y, amplitude=100):
-        return np.zeros(x.shape)
-
+    def GetSignal(self, X, Y, amplitude=100):
 """## GaussianSignal 정의
 가우시안 분포를 기준으로 한 시그널
 
@@ -67,6 +65,7 @@ class Signal:
 3. 분산기준각 (```sdeg``` 또는 ```srad```, 둘 다 정의되면 ```sdeg```이 우선)
 
 """
+        return np.zeros(X.shape)
 
 class GaussianSignal(Signal):
     def __init__(self, x0=0, y0=0, amplitude=100, S=None, sx=1, sy=1, sdeg=None, srad=None):
