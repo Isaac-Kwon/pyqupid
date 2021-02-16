@@ -1,7 +1,5 @@
 name: "TestCheck"
-on: 
-  push:
-    branches: [ workflow_test ]
+on: [ push ]
 
 jobs:
   docs:
