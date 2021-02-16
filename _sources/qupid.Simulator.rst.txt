@@ -1,4 +1,4 @@
-Cluster.Simulator module
+qupid.Simulator module
 ========================
 
 .. automodule:: qupid.Simulator
