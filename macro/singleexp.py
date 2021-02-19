@@ -22,15 +22,15 @@ def singleexp1(ntime = 10):
         exp.Execute()
         print("Signal Characteristics")
         print("i:%d \t x: %.2f \t y: %.2f \t amp: %d" %(i, detector.signals[0].x0, detector.signals[0].y0, detector.signals[0].amplitude))
-        PrintTFGrid(exp.gridlist[0], truetext='O', falsetext='.')
         if len(exp.gridlist)==0:
             fired = None
             fnpix = 0
+            print("None")
         else:
             fired = exp.gridlist[0]
             fnpix = sum(fired==True)
-
-        print("npixel=%d" %(np.sum(exp.gridlist[0])))
+            PrintTFGrid(exp.gridlist[0], truetext='O', falsetext='.')
+        print("npixel=%d" %(fnpix))
         print("===================")
         df1 = DataFrame({
             "i": i,
