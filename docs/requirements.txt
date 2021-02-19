@@ -3,3 +3,4 @@ scipy
 pydata_sphinx_theme
 numpydoc
 matplotlib
+pandas
