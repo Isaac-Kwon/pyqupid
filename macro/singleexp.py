@@ -16,7 +16,7 @@ from argparse import ArgumentParser
 def singleexp1(ntime = 10):
     df = DataFrame()
     print("===================")
-    detector = Digitizer(-8, 8, 16, -8, 8, 16, threshold=250)
+    detector = Digitizer(-10, 10, 20, -10, 10, 20, threshold=250)
     exp = SingleGISOParticleSimulation(detector=detector, sigrange=(0, ne_alpha), sigdev=0.83)
     for i in range(ntime):
         exp.Execute()
@@ -25,17 +25,20 @@ def singleexp1(ntime = 10):
         PrintTFGrid(exp.gridlist[0], truetext='O', falsetext='.')
         if len(exp.gridlist)==0:
             fired = None
+            fnpix = 0
         else:
             fired = exp.gridlist[0]
+            fnpix = sum(fired==True)
+
         print("npixel=%d" %(np.sum(exp.gridlist[0])))
         print("===================")
         df1 = DataFrame({
             "i": i,
-            "data": [exp.gridlist[0]],
+            "data": [fired],
             "x0": [detector.signals[0].x0],
             "y0": [detector.signals[0].y0],
             "amp": [detector.signals[0].amplitude],
-            "npix": [fired]
+            "npix": [fnpix]
         })
         df = df.append(df1)
         exp.Clear()
