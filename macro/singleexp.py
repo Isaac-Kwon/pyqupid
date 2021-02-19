@@ -1,5 +1,5 @@
 import sys
-sys.path.append("./")
+# sys.path.append("./")
 sys.path.append("../")
 
 from qupid.Generator import Digitizer
@@ -23,6 +23,10 @@ def singleexp1(ntime = 10):
         print("Signal Characteristics")
         print("i:%d \t x: %.2f \t y: %.2f \t amp: %d" %(i, detector.signals[0].x0, detector.signals[0].y0, detector.signals[0].amplitude))
         PrintTFGrid(exp.gridlist[0], truetext='O', falsetext='.')
+        if len(exp.gridlist)==0:
+            fired = None
+        else:
+            fired = exp.gridlist[0]
         print("npixel=%d" %(np.sum(exp.gridlist[0])))
         print("===================")
         df1 = DataFrame({
@@ -31,7 +35,7 @@ def singleexp1(ntime = 10):
             "x0": [detector.signals[0].x0],
             "y0": [detector.signals[0].y0],
             "amp": [detector.signals[0].amplitude],
-            "npix": [np.sum(exp.gridlist[0])]
+            "npix": [fired]
         })
         df = df.append(df1)
         exp.Clear()
