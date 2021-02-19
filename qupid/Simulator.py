@@ -56,10 +56,7 @@ class SingleGISOParticleSimulation(ClusterSimulation):
         self.mc = GaussianSignalISOMonteCarlo((-0.5, 0.5),
                                               (-0.5, 0.5),
                                               sigrange=sigrange, sigdev=sigdev)
-        self.filename = 'text.txt'
         self.i=0
-        with open(self.filename, 'w') as file:
-            pass
     def Execute(self):
         self.detector.InjectSignal(self.mc.GenerateSignal())
         fX, fY = self.detector.GetDigitizedSignal_List()
@@ -87,10 +84,7 @@ class DoubleGISOParticleSimulation(ClusterSimulation):
         self.mc2 = GaussianSignalISOMonteCarlo((-0.5, 0.5),
                                               (-0.5, 0.5),
                                               sigrange=sigrange, sigdev=sigdev)
-        self.filename = 'text.txt'
         self.i=0
-        with open(self.filename, 'w') as file:
-            pass
     def Execute(self):
         self.detector.InjectSignal(self.mc1.GenerateSignal())
         self.detector.InjectSignal(self.mc2.GenerateSignal())
