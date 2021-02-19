@@ -7,3 +7,7 @@
 
 __version__ = "0.0.1"
 
+import sys
+if sys.version_info[0] < 3:
+    raise Exception("Must be using Python 3")
+
