@@ -27,9 +27,9 @@ def PrintTFGrid(G, truetext = 'T', falsetext = 'F'):
     for i in range(G.shape[1]):
         for j in range(G.shape[0]):
             if G[i,j]:
-                print("T", end="")
+                print(truetext, end="")
             else:
-                print("F", end="")
+                print(falsetext, end="")
         print()
 
 def PlotSignalAnalogue(X,Y,Z, ax=None):
