@@ -1,11 +1,19 @@
 import sys
-sys.path.append("./")
-sys.path.append("../")
 
-from qupid.Generator import Digitizer
-from qupid.Simulator import ne_alpha
-from qupid.Simulator import SingleGISOParticleSimulation
-from qupid.Grapher   import PrintTFGrid
+try:
+    from qupid.Generator import Digitizer
+    from qupid.Simulator import ne_alpha
+    from qupid.Simulator import SingleGISOParticleSimulation
+    from qupid.Grapher   import PrintTFGrid
+except ModuleNotFoundError:
+    from os.path import realpath
+    Repopath = realpath(__file__ + "/../../")
+    sys.path.append(Repopath)
+    from qupid.Generator import Digitizer
+    from qupid.Simulator import ne_alpha
+    from qupid.Simulator import SingleGISOParticleSimulation
+    from qupid.Grapher   import PrintTFGrid
+
 
 from pandas import DataFrame
 import numpy as np
