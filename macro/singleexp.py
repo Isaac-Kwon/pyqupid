@@ -28,7 +28,7 @@ def singleexp1(ntime = 10):
             print("None")
         else:
             fired = exp.gridlist[0]
-            fnpix = sum(fired==True)
+            fnpix = np.sum(fired==True)
             PrintTFGrid(exp.gridlist[0], truetext='O', falsetext='.')
         print("npixel=%d" %(fnpix))
         print("===================")
