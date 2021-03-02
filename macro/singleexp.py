@@ -5,6 +5,7 @@ try:
     from qupid.Simulator import ne_alpha
     from qupid.Simulator import SingleGISOParticleSimulation
     from qupid.Grapher   import PrintTFGrid
+    from qupid.Tools     import ShrinkTFArray
 except ModuleNotFoundError:
     from os.path import realpath
     Repopath = realpath(__file__ + "/../../")
@@ -13,6 +14,7 @@ except ModuleNotFoundError:
     from qupid.Simulator import ne_alpha
     from qupid.Simulator import SingleGISOParticleSimulation
     from qupid.Grapher   import PrintTFGrid
+    from qupid.Tools     import ShrinkTFArray
 
 
 from pandas import DataFrame
@@ -35,9 +37,9 @@ def singleexp1(ntime = 10):
             fnpix = 0
             print("None")
         else:
-            fired = exp.gridlist[0]
+            fired = ShrinkTFArray(exp.gridlist[0])
             fnpix = np.sum(fired==True)
-            PrintTFGrid(exp.gridlist[0], truetext='O', falsetext='.')
+            PrintTFGrid(fired, truetext='O', falsetext='.')
         print("npixel=%d" %(fnpix))
         print("===================")
         df1 = DataFrame({
