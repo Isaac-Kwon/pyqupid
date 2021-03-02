@@ -48,7 +48,7 @@ def singleexp1(ntime = 10):
             "amp": [detector.signals[0].amplitude],
             "npix": [fnpix]
         })
-        df = df.append(df1)
+        df = df.append(df1, ignore_index=True)
         exp.Clear()
     return df
 
