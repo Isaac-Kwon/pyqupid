@@ -21,9 +21,11 @@ pitchy = 30./30. # Default : 1.
 # Other constant
 """
 number of electron
-5.486 MeV / (786.5kJ/1mol) = 672763.593423027529918973 ~= 672764
+Depreciated : 5.486 MeV / (786.5kJ/1mol) = 672763.593423027529918973 ~= 672764
+
+5.486 MeV / (3.61eV) = 1506930 ~= 1,506,930
 """
-ne_alpha = 672764 # 5.44 MeV / Silicon's 1st ionization energy
+ne_alpha = 1506930
 
 class ClusterSimulation():
     def __init__(self, detector=None):
