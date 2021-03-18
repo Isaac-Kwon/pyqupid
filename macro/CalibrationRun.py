@@ -53,7 +53,7 @@ def CalibrationRun(ntime = 10):
     df = DataFrame()
     print("===================")
     detector = Digitizer(-10, 10, 20, -10, 10, 20, threshold=250)
-    exp = CalibrationSingleExp(detector=detector, sigrange=(540273*0.8, 540273*1.2), devrange=(0.75, 0.91))
+    exp = CalibrationSingleExp(detector=detector, sigrange=(540273*0.9, 540273*1.1), devrange=(0.75, 0.91))
     for i in range(ntime):
         exp.Execute()
         print("Signal Characteristics")
