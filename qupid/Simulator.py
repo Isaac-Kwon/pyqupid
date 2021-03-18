@@ -53,7 +53,7 @@ class ClusterSimulation():
         return None
 
 class SingleGISOParticleSimulation(ClusterSimulation):
-    def __init__(self, detector=None, sigrange=(0, ne_alpha), sigdev=0.83):
+    def __init__(self, detector=None, sigrange=(0, ne_alpha), sigdev=(0.83, 0.83)):
         super(SingleGISOParticleSimulation, self).__init__(detector=detector)
         self.mc = GaussianSignalISOMonteCarlo((-0.5, 0.5),
                                               (-0.5, 0.5),
@@ -78,7 +78,7 @@ class SingleGISOParticleSimulation(ClusterSimulation):
         return None
 
 class DoubleGISOParticleSimulation(ClusterSimulation):
-    def __init__(self, detector=None, sigrange=(0, ne_alpha), sigdev=0.83, sig2posrange=(-8,8)):
+    def __init__(self, detector=None, sigrange=(0, ne_alpha), sigdev=(0.83, 0.83), sig2posrange=(-8,8)):
         super(DoubleGISOParticleSimulation, self).__init__(detector=detector)
         self.mc1 = GaussianSignalISOMonteCarlo((-0.5, 0.5),
                                               (-0.5, 0.5),

@@ -39,7 +39,7 @@ class MonteCarlo:
 
 
 class GaussianSignalISOMonteCarlo(MonteCarlo):
-    def __init__(self, xrange, yrange, sigrange, sigdev=0.83):
+    def __init__(self, xrange, yrange, sigrange, devrange=0.83):
         geninfo = { # Setup monte-carlo generator base
             "x0":{
                 "range": (xrange[0], xrange[1])
@@ -50,18 +50,18 @@ class GaussianSignalISOMonteCarlo(MonteCarlo):
             "amp0":{
                 "range": (sigrange[0], sigrange[1])
             },
-            "sigdevx0": {
-                "fix"  : sigdev
-            },
-            "sigdevy0": {
-                "fix"  : sigdev
+            "sigdev": {
+                "range": (devrange[0], devrange[1])
             }
+            # "sigdevy0": {
+            #     "fix"  : sigdev
+            # }
         }
         super(GaussianSignalISOMonteCarlo, self).__init__(geninfo)
     def GenerateSignal(self):
         self.Generate()
         return GaussianSignal(x0=self.gendict["x0"]["value"],
                               y0=self.gendict["y0"]["value"],
-                              amplitude=self.gendict["amp0"]["value"],sx=self.gendict["sigdevx0"]["value"],
-                              sy=self.gendict["sigdevy0"]["value"]
+                              amplitude=self.gendict["amp0"]["value"],sx=self.gendict["sigdev"]["value"],
+                              sy=self.gendict["sigdev"]["value"]
                               )
