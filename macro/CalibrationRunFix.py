@@ -99,6 +99,6 @@ if __name__ == "__main__":
         """%(args.filename, args.seed, args.nevent)
     )
     seed(args.seed)
-    df = CalibrationRun(args.nevent)
+    df = CalibrationRunFix(args.nevent)
     df.to_pickle(args.filename)
     # dff = CalibrationRun(20)
