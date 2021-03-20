@@ -73,11 +73,11 @@ def CalibrationRun(ntime = 10):
             fnpix = np.sum(fired==True)
             shapex = fired.shape[1]
             shapey = fired.shape[0]
+            stretch = fired.reshape((fired.size,))
             shapen = sum(v<<i for i, v in enumerate(stretch[::-1]))
             PrintTFGrid(fired, truetext='O', falsetext='.')
         print("npixel=%d" %(fnpix))
         print("===================")
-        stretch = fired.reshape((fired.size,))
         df1 = DataFrame({
             "i": i,
             "data": [fired],
