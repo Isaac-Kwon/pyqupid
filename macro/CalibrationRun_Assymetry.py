@@ -64,10 +64,16 @@ def CalibrationRun(ntime = 10):
         if len(exp.gridlist)==0:
             fired = None
             fnpix = 0
+            shapex = 0
+            shapey = 0
+            shapen = 0
             print("None")
         else:
             fired = ShrinkTFArray(exp.gridlist[0])
             fnpix = np.sum(fired==True)
+            shapex = fired.shape[1]
+            shapey = fired.shape[0]
+            shapen = sum(v<<i for i, v in enumerate(stretch[::-1]))
             PrintTFGrid(fired, truetext='O', falsetext='.')
         print("npixel=%d" %(fnpix))
         print("===================")
@@ -78,9 +84,9 @@ def CalibrationRun(ntime = 10):
             "x0": [detector.signals[0].x0],
             "y0": [detector.signals[0].y0],
             "sigdev" : [detector.signals[0].S[0,0]],
-            "shapex": [fired.shape[1]],
-            "shapey": [fired.shape[0]],
-            "shapen": [sum(v<<i for i, v in enumerate(stretch[::-1]))],
+            "shapex": [shapex],
+            "shapey": [shapey],
+            "shapen": [shapen],
             "amp": [detector.signals[0].amplitude],
             "npix": [fnpix]
         })
