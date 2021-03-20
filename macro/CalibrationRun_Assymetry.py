@@ -56,7 +56,8 @@ def CalibrationRun(ntime = 10):
     detector = Digitizer(-292.4, 292.4, 20, -268.8, 268.8, 20, threshold=250)
     # 29.24 26.88
     # exp = CalibrationSingleExp(detector=detector, sigrange=(540273*0.5, 540273*1.5), devrange=(0.75*30, 0.91*30))
-    exp = CalibrationSingleExp(detector=detector, sigrange=(0., 540273*3.0), devrange=(0.75*30, 0.91*30))
+    # exp = CalibrationSingleExp(detector=detector, sigrange=(0., 540273*3.0), devrange=(0.75*30, 0.91*30))
+    exp = CalibrationSingleExp(detector=detector, sigrange=(0., 540273*3.0), devrange=(0.3*30, 0.91*30))
     for i in range(ntime):
         exp.Execute()
         print("Signal Characteristics")
